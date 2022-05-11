@@ -33,11 +33,17 @@ function playRound(playerSelection, computerSelection) {
         return `It's a tie! You both picked ${playerSelection}.`
     }
     else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock")) {
-        return `You lose! ${computerSelection} beats ${playerSelection}.`
+        return `You lose-- ${computerSelection} beats ${playerSelection}.`
     }
     else {
-        return `You win! ${playerSelection} beats ${computerSelection}.`
+        return `You win-- ${playerSelection} beats ${computerSelection}.`
     }
 }
 
-console.log(playRound("Scissors", "rock"));
+//write a function that plays 5 rounds of rock paper scissors
+// create function game()
+//create a loop that will run 5 times
+//on each loop, run playRound()
+//record winner of each round
+//if playerScore reaches >= 3 return "you won" and break out of loop
+//if computerScore reaches >=3 return "you lost" and break out of loop
