@@ -2,11 +2,11 @@
 function computerPlay() {
     let play = Math.floor(Math.random() * 3);
     if (play == 0) {
-        console.log("Rock");
+        return ("rock");
     } else if (play == 1) {
-        console.log("Paper");
+        return ("paper");
     } else {
-        console.log("Scissors");
+        return ("scissors");
     }
 }
 
@@ -28,10 +28,11 @@ function computerPlay() {
     //print 'you win! %{pS} beats %{cS}
 
 function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
     if (playerSelection == computerSelection) {
         return `It's a tie! You both picked ${playerSelection}.`
     }
-    else if ((playerSelection == "Rock" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Rock")) {
+    else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock")) {
         return `You lose! ${computerSelection} beats ${playerSelection}.`
     }
     else {
@@ -39,4 +40,4 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-console.log(playRound("Scissors", "Rock"));
+console.log(playRound("Scissors", "rock"));
