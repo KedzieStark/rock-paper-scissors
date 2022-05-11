@@ -10,8 +10,6 @@ function computerPlay() {
     }
 }
 
-computerPlay();
-
 //write a function that plays a single round...
 
 //create playRound function
@@ -28,3 +26,17 @@ computerPlay();
     //print 'you lose! %{cS} beats %{pS}'
 //else
     //print 'you win! %{pS} beats %{cS}
+
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection == computerSelection) {
+        return `It's a tie! You both picked ${playerSelection}.`
+    }
+    else if ((playerSelection == "Rock" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Rock")) {
+        return `You lose! ${computerSelection} beats ${playerSelection}.`
+    }
+    else {
+        return `You win! ${playerSelection} beats ${computerSelection}.`
+    }
+}
+
+console.log(playRound("Scissors", "Rock"));
