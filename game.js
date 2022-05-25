@@ -26,22 +26,23 @@ function computerPlay() {
     //print 'you lose! %{cS} beats %{pS}'
 //else
     //print 'you win! %{pS} beats %{cS}
-
+    let pScore = 0;
+    let cScore = 0;
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
-    if (playerSelection != "rock" || "paper" || "scissors") {
-        return `"${playerSelection}" isn't a valid  move. Pick rock, paper, or scissors.`
+    if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
+        return `"${playerSelection}" isn't a valid  move. Pick rock, paper, or scissors.`;
     }
     else if (playerSelection == computerSelection) {
         return `It's a tie! You both picked ${playerSelection}.`;
     }
     else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock")) {
-        return `You lose-- ${computerSelection} beats ${playerSelection}.`;
         cScore ++;
+        return `You lose-- ${computerSelection} beats ${playerSelection}.`;
     }
     else {
-        return `You win-- ${playerSelection} beats ${computerSelection}.`;
         pScore ++;
+        return `You win-- ${playerSelection} beats ${computerSelection}.`;
     }
 }
 
@@ -63,6 +64,5 @@ function game() {
 
 }
 
-let pScore = 0;
-let cScore = 0;
+
 game();
