@@ -29,14 +29,19 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
-    if (playerSelection == computerSelection) {
-        return `It's a tie! You both picked ${playerSelection}.`
+    if (playerSelection != "rock" || "paper" || "scissors") {
+        return `"${playerSelection}" isn't a valid  move. Pick rock, paper, or scissors.`
+    }
+    else if (playerSelection == computerSelection) {
+        return `It's a tie! You both picked ${playerSelection}.`;
     }
     else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock")) {
         return `You lose-- ${computerSelection} beats ${playerSelection}.`;
+        cScore ++;
     }
     else {
-        return `You win-- ${playerSelection} beats ${computerSelection}.`
+        return `You win-- ${playerSelection} beats ${computerSelection}.`;
+        pScore ++;
     }
 }
 
@@ -49,7 +54,7 @@ function playRound(playerSelection, computerSelection) {
 //if computerScore reaches >=3 return "you lost" and break out of loop
 
 function game() {
-
+    alert("Want to play rock-paper-scissors?");
     for (let i = 1; i <= 5; i++) {
         let pMove = prompt("Pick a move");
         let cMove = computerPlay();
@@ -58,4 +63,6 @@ function game() {
 
 }
 
+let pScore = 0;
+let cScore = 0;
 game();
