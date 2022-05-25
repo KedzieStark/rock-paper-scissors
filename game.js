@@ -26,8 +26,7 @@ function computerPlay() {
     //print 'you lose! %{cS} beats %{pS}'
 //else
     //print 'you win! %{pS} beats %{cS}
-    let pScore = 0;
-    let cScore = 0;
+
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
@@ -55,14 +54,26 @@ function playRound(playerSelection, computerSelection) {
 //if computerScore reaches >=3 return "you lost" and break out of loop
 
 function game() {
-    alert("Want to play rock-paper-scissors?");
+    alert(`Want to play rock-paper-scissors?`);
+    alert(`We'll play best of five!`);
     for (let i = 1; i <= 5; i++) {
         let pMove = prompt("Pick a move");
-        let cMove = computerPlay();
+        let cMove = "scissors";
+        // let cMove = computerPlay();
         console.log(playRound(pMove, cMove));
+        console.log(`Your score: ${pScore}. Computer score: ${cScore}`);
+        if (pScore >= 3) {
+            console.log(`You win!`);
+            break;
+        }
+        else if (cScore >= 3) {
+            console.log(`You lose!`);
+            break;
+        }
     }
 
 }
 
-
+let pScore = 0;
+let cScore = 0;
 game();
