@@ -56,5 +56,3 @@ buttons.forEach((button) => {
         game();
     });
 });
-
-
